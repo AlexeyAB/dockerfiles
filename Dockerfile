@@ -2,7 +2,7 @@ FROM nvidia/cuda:11.2.1-cudnn8-devel-ubuntu20.04
 
 ## Install OpenCV 4.5.1 last stable commit
 RUN apt-get -y update
-RUN apt-get -y install git wget python-pip
+RUN apt-get -y install git wget python3-pip
 RUN apt-get -y install curl mc libeigen3-dev
 #RUN apt-get -y install nano tmux htop
 RUN apt-get install -y build-essential cmake libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev python-dev python-numpy libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libjasper-dev libdc1394-22-dev ocl-icd-opencl-dev libcanberra-gtk3-module
