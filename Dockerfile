@@ -12,7 +12,8 @@ RUN apt-get -y install nano tmux htop
 #RUN apt-get install -y build-essential cmake libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev python-dev python-numpy libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libjasper-dev libdc1394-22-dev ocl-icd-opencl-dev libcanberra-gtk3-module
 
 RUN apt-get install -y build-essential cmake pkg-config libavcodec-dev libavformat-dev 
-RUN apt-get install -y libswscale-dev libjpeg-dev libpng-dev libtiff-dev libjasper-dev libdc1394-22-dev 
+RUN apt-get install -y libjpeg-dev libpng-dev libtiff-dev 
+#RUN apt-get install -y libswscale-dev libjasper-dev libdc1394-22-dev 
 RUN apt-get install -y python-dev python-numpy
 RUN apt-get install -y libgtk2.0-dev libcanberra-gtk3-module
 RUN apt-get install -y libtbb2 libtbb-dev ocl-icd-opencl-dev 
