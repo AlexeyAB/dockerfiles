@@ -9,7 +9,6 @@ RUN DEBIAN_FRONTEND="noninteractive" apt-get -y install tzdata
 
 RUN apt-get -y install curl mc libeigen3-dev
 RUN apt-get -y install nano tmux htop
-#RUN apt-get install -y build-essential cmake libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev python-dev python-numpy libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libjasper-dev libdc1394-22-dev ocl-icd-opencl-dev libcanberra-gtk3-module
 
 RUN apt-get install -y build-essential cmake pkg-config libavcodec-dev libavformat-dev 
 RUN apt-get install -y libjpeg-dev libpng-dev libtiff-dev libdc1394-22-dev 
@@ -32,15 +31,15 @@ WORKDIR /opt/opencv/build
 RUN cmake -D CMAKE_BUILD_TYPE=RELEASE \
       -D CMAKE_INSTALL_PREFIX=/usr/local \
       -D OPENCV_EXTRA_MODULES_PATH=/opt/opencv_contrib/modules \
-      -D WITH_OPENGL=ON \
+      -D WITH_OPENGL=OFF \
       -D WITH_TBB=OFF \
       -D BUILD_opencv_world=OFF \
-      -D BUILD_opencv_python2=ON \
+      -D BUILD_opencv_python2=OFF \
       -D BUILD_opencv_python3=OFF \
-      -D INSTALL_PYTHON_EXAMPLES=ON \
+      -D INSTALL_PYTHON_EXAMPLES=OFF \
       -D WITH_V4L=ON \
       ..
-RUN make -j
+RUN make
 RUN make install
 RUN ldconfig
 
